@@ -15,6 +15,21 @@ public class Griffindor extends Hogwarts {
         this.honor = honor;
         this.nobility = nobility;
     }
+
+    public void campare( Griffindor studentFirst,  Griffindor studentSecond) {
+        int powerStudentOne = studentFirst.getBravery() + studentFirst.getHonor()+studentFirst.getNobility();
+        int powerStudentSecond = studentSecond.getBravery() + studentSecond.getHonor()+studentSecond.getNobility();
+        if (powerStudentOne > powerStudentSecond) {
+            System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Гриффиндорец, чем " +
+                    studentSecond.getName()+" "+ studentSecond.getSurname());
+        } else if (powerStudentOne < powerStudentSecond){
+            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Гриффиндорец, чем "
+                    + studentFirst.getName()+" "+ studentFirst.getSurname());
+        }else {
+            System.out.println(" Победила дружба! ");
+        }
+    }
+
     @Override
     public String toString() {
         return "Я,"+getName()+" "+getSurname()+"- ученик Гриффиндора!" +

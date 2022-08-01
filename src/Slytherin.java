@@ -18,6 +18,21 @@ public class Slytherin extends Hogwarts {
         this.resourceful = resourceful;
         this.thirstForPower = thirstForPower;
     }
+    public void campare( Slytherin studentFirst,  Slytherin studentSecond) {
+        int powerStudentOne = studentFirst.getCunning() + studentFirst.getDetermined()+studentFirst.getAmbitious()+
+                studentFirst.getResourceful()+studentFirst.getThirstForPower();
+        int powerStudentSecond = studentSecond.getCunning() + studentSecond.getDetermined()+studentSecond.getAmbitious()+
+                studentSecond.getResourceful()+studentSecond.getThirstForPower();
+        if (powerStudentOne > powerStudentSecond) {
+            System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Слизеринец, чем " +
+                    studentSecond.getName()+" "+ studentSecond.getSurname());
+        } else if (powerStudentOne < powerStudentSecond){
+            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Слизеринец, чем "
+                    + studentFirst.getName()+" "+ studentFirst.getSurname());
+        }else {
+            System.out.println(" Победила дружба! ");
+        }
+    }
     @Override
     public String toString() {
         return "Я,"+getName()+" "+getSurname()+"- ученик Слизерина!" +

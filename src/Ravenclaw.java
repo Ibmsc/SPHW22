@@ -16,6 +16,21 @@ public class Ravenclaw extends Hogwarts{
         this.witty = witty;
         this.creative = creative;
     }
+    public void campare( Ravenclaw studentFirst,  Ravenclaw studentSecond) {
+        int powerStudentOne = studentFirst.getSmart() + studentFirst.getWise()+studentFirst.getWitty()+
+                studentFirst.getCreative();
+        int powerStudentSecond = studentSecond.getSmart() + studentSecond.getWise()+studentSecond.getWitty()+
+                studentSecond.getCreative();
+        if (powerStudentOne > powerStudentSecond) {
+            System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Когтевранец, чем " +
+                    studentSecond.getName()+" "+ studentSecond.getSurname());
+        } else if (powerStudentOne < powerStudentSecond){
+            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Когтевранец, чем "
+                    + studentFirst.getName()+" "+ studentFirst.getSurname());
+        }else {
+            System.out.println(" Победила дружба! ");
+        }
+    }
     @Override
     public String toString() {
         return "Я,"+getName()+" "+getSurname()+"- ученик Когтеврана!" +

@@ -14,6 +14,19 @@ public class Hufflepuff extends Hogwarts {
         this.loyalty = loyalty;
         this.honesty = honesty;
     }
+    public void campare( Hufflepuff studentFirst,  Hufflepuff studentSecond) {
+        int powerStudentOne = studentFirst.getHardworking() + studentFirst.getLoyalty()+studentFirst.getHonesty();
+        int powerStudentSecond = studentSecond.getHardworking() + studentSecond.getHonesty()+studentSecond.getHardworking();
+        if (powerStudentOne > powerStudentSecond) {
+            System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Пуффендуец, чем " +
+                    studentSecond.getName()+" "+ studentSecond.getSurname());
+        } else if (powerStudentOne < powerStudentSecond){
+            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Пуффендуец, чем "
+                    + studentFirst.getName()+" "+ studentFirst.getSurname());
+        }else {
+            System.out.println(" Победила дружба! ");
+        }
+    }
     @Override
     public String toString() {
         return "Я,"+getName()+" "+getSurname()+"- ученик Пуффендуя!" +
