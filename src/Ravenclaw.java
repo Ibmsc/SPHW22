@@ -3,29 +3,39 @@
 //Чжоу Чанг, Падма Патил и Маркус Белби.
 public class Ravenclaw extends Hogwarts{
 
+    private String name;
+    private String Surname;
     private int smart;
     private int wise;
     private int witty;
     private int creative;
+    private int powerOfMagic;
+    private int distanceTransgression;
     public Ravenclaw(String name, String surname, int powerOfMagic, int distanceTransgression,
                      int smart,int wise,int witty,int creative)
     {
-        super(name, surname, powerOfMagic, distanceTransgression);
+        super(powerOfMagic, distanceTransgression);
+        this.name = name;
+        this.Surname = surname;
         this.smart = smart;
         this.wise = wise;
         this.witty = witty;
         this.creative = creative;
     }
-    public void campare( Ravenclaw studentFirst,  Ravenclaw studentSecond) {
+    public void campare( Ravenclaw studentFirst) {
+        if (studentFirst == null) {
+            System.out.println("Вы не передали студента");
+            return;
+        }
         int powerStudentOne = studentFirst.getSmart() + studentFirst.getWise()+studentFirst.getWitty()+
                 studentFirst.getCreative();
-        int powerStudentSecond = studentSecond.getSmart() + studentSecond.getWise()+studentSecond.getWitty()+
-                studentSecond.getCreative();
+        int powerStudentSecond = this.getSmart() + this.getWise()+this.getWitty()+
+                this.getCreative();
         if (powerStudentOne > powerStudentSecond) {
             System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Когтевранец, чем " +
-                    studentSecond.getName()+" "+ studentSecond.getSurname());
+                    this.getName()+" "+ this.getSurname());
         } else if (powerStudentOne < powerStudentSecond){
-            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Когтевранец, чем "
+            System.out.println(this.getName()+" "+ this.getSurname() + " лучший Когтевранец, чем "
                     + studentFirst.getName()+" "+ studentFirst.getSurname());
         }else {
             System.out.println(" Победила дружба! ");
@@ -40,6 +50,22 @@ public class Ravenclaw extends Hogwarts{
                 ", творчество = " + creative +
                 ", сила магии = " + this.getPowerOfMagic() +
                 ", расстояние трансгресии = " + this.getDistanceTransgression();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
     }
 
     public int getSmart() {
@@ -72,5 +98,20 @@ public class Ravenclaw extends Hogwarts{
 
     public void setCreative(int creative) {
         this.creative = creative;
+    }
+    public int getPowerOfMagic() {
+        return powerOfMagic;
+    }
+
+    public void setPowerOfMagic(int powerOfMagic) {
+        this.powerOfMagic = powerOfMagic;
+    }
+
+    public int getDistanceTransgression() {
+        return distanceTransgression;
+    }
+
+    public void setDistanceTransgression(int distanceTransgression) {
+        this.distanceTransgression = distanceTransgression;
     }
 }

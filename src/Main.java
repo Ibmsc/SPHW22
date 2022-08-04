@@ -42,10 +42,14 @@ public class Main {
             printService.print (slytherins);
             System.out.println();
 
-            griffindors[0].campare(griffindors[1], griffindors[0]);
-            hufflepuffs[0].campare(hufflepuffs[0], hufflepuffs[1]);
-            ravenclaws[0].campare(ravenclaws[2], ravenclaws[0]);
-            slytherins[0].campare(slytherins[0],slytherins[2]);
+            griffindors[0].campare(griffindors[1]);
+            hufflepuffs[0].campare(hufflepuffs[1]);
+            ravenclaws[0].campare(ravenclaws[2]);
+            slytherins[0].campare(slytherins[2]);
+            System.out.println();
+
+
+
 
 
 

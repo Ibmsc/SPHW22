@@ -3,25 +3,36 @@
 //Захария Смит, Седрик Диггори, Джастин Финч-Флетчли.
 public class Hufflepuff extends Hogwarts {
 
+    private String name;
+    private String Surname;
     private int hardworking;
     private int loyalty;
     private int honesty;
+    private int powerOfMagic;
+    private int distanceTransgression;
     public Hufflepuff(String name, String surname, int powerOfMagic, int distanceTransgression,
                       int hardworking,int loyalty,int honesty)
     {
-        super(name, surname, powerOfMagic, distanceTransgression);
+        super (powerOfMagic, distanceTransgression);
+        this.name = name;
+        this.Surname = surname;
         this.hardworking = hardworking;
         this.loyalty = loyalty;
         this.honesty = honesty;
     }
-    public void campare( Hufflepuff studentFirst,  Hufflepuff studentSecond) {
+
+    public void campare( Hufflepuff studentFirst) {
+        if (studentFirst == null) {
+            System.out.println("Вы не передали студента");
+            return;
+        }
         int powerStudentOne = studentFirst.getHardworking() + studentFirst.getLoyalty()+studentFirst.getHonesty();
-        int powerStudentSecond = studentSecond.getHardworking() + studentSecond.getHonesty()+studentSecond.getHardworking();
+        int powerStudentSecond = this.getHardworking() + this.getHonesty()+this.getHardworking();
         if (powerStudentOne > powerStudentSecond) {
             System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Пуффендуец, чем " +
-                    studentSecond.getName()+" "+ studentSecond.getSurname());
+                    this.getName()+" "+ this.getSurname());
         } else if (powerStudentOne < powerStudentSecond){
-            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Пуффендуец, чем "
+            System.out.println(this.getName()+" "+ this.getSurname() + " лучший Пуффендуец, чем "
                     + studentFirst.getName()+" "+ studentFirst.getSurname());
         }else {
             System.out.println(" Победила дружба! ");
@@ -35,6 +46,22 @@ public class Hufflepuff extends Hogwarts {
                 ", честность = " + honesty +
                 ", сила магии = " + this.getPowerOfMagic() +
                 ", расстояние трансгресии = " + this.getDistanceTransgression();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
     }
 
     public int getHardworking() {
@@ -60,6 +87,20 @@ public class Hufflepuff extends Hogwarts {
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
+    public int getPowerOfMagic() {
+        return powerOfMagic;
+    }
 
+    public void setPowerOfMagic(int powerOfMagic) {
+        this.powerOfMagic = powerOfMagic;
+    }
+
+    public int getDistanceTransgression() {
+        return distanceTransgression;
+    }
+
+    public void setDistanceTransgression(int distanceTransgression) {
+        this.distanceTransgression = distanceTransgression;
+    }
 
 }

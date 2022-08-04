@@ -3,31 +3,41 @@
 // жажда власти( thirst for power).
 //Драко Малфой, Грэхэм Монтегю, Грегори Гойл
 public class Slytherin extends Hogwarts {
+    private String name;
+    private String Surname;
     private int cunning;
     private int determined;
     private int ambitious;
     private int resourceful;
     private int thirstForPower;
+    private int powerOfMagic;
+    private int distanceTransgression;
     public Slytherin(String name, String surname, int powerOfMagic, int distanceTransgression,
                      int cunning,int determined,int ambitious,int resourceful,int thirstForPower)
     {
-        super(name, surname, powerOfMagic, distanceTransgression);
+        super(powerOfMagic, distanceTransgression);
+        this.name = name;
+        this.Surname = surname;
         this.cunning = cunning;
         this.determined = determined;
         this.ambitious = ambitious;
         this.resourceful = resourceful;
         this.thirstForPower = thirstForPower;
     }
-    public void campare( Slytherin studentFirst,  Slytherin studentSecond) {
+    public void campare( Slytherin studentFirst) {
+        if (studentFirst == null) {
+            System.out.println("Вы не передали студента");
+            return;
+        }
         int powerStudentOne = studentFirst.getCunning() + studentFirst.getDetermined()+studentFirst.getAmbitious()+
                 studentFirst.getResourceful()+studentFirst.getThirstForPower();
-        int powerStudentSecond = studentSecond.getCunning() + studentSecond.getDetermined()+studentSecond.getAmbitious()+
-                studentSecond.getResourceful()+studentSecond.getThirstForPower();
+        int powerStudentSecond = this.getCunning() + this.getDetermined()+this.getAmbitious()+
+                this.getResourceful()+this.getThirstForPower();
         if (powerStudentOne > powerStudentSecond) {
             System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Слизеринец, чем " +
-                    studentSecond.getName()+" "+ studentSecond.getSurname());
+                    this.getName()+" "+ this.getSurname());
         } else if (powerStudentOne < powerStudentSecond){
-            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Слизеринец, чем "
+            System.out.println(this.getName()+" "+ this.getSurname() + " лучший Слизеринец, чем "
                     + studentFirst.getName()+" "+ studentFirst.getSurname());
         }else {
             System.out.println(" Победила дружба! ");
@@ -43,6 +53,22 @@ public class Slytherin extends Hogwarts {
                 ", жажда власти = " + thirstForPower +
                 ", сила магии = " + this.getPowerOfMagic() +
                 ", расстояние трансгресии = " + this.getDistanceTransgression();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
     }
 
     public int getCunning() {
@@ -83,5 +109,20 @@ public class Slytherin extends Hogwarts {
 
     public void setThirstForPower(int thirstForPower) {
         this.thirstForPower = thirstForPower;
+    }
+    public int getPowerOfMagic() {
+        return powerOfMagic;
+    }
+
+    public void setPowerOfMagic(int powerOfMagic) {
+        this.powerOfMagic = powerOfMagic;
+    }
+
+    public int getDistanceTransgression() {
+        return distanceTransgression;
+    }
+
+    public void setDistanceTransgression(int distanceTransgression) {
+        this.distanceTransgression = distanceTransgression;
     }
 }

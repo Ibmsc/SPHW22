@@ -3,27 +3,39 @@
 //Гарри Поттер, Гермиона Грейнджер и Рон Уизли
 public class Griffindor extends Hogwarts {
 
+
+    private String name;
+    private String Surname;
     private int nobility;
     private int honor;
     private int bravery;
+    private int powerOfMagic;
+    private int distanceTransgression;
 
     public Griffindor(String name, String surname, int powerOfMagic, int distanceTransgression,
                       int nobility,int honor,int bravery)
     {
-        super(name, surname, powerOfMagic, distanceTransgression);
+        super( powerOfMagic, distanceTransgression);
+        this.name = name;
+        this.Surname = surname;
         this.bravery = bravery;
         this.honor = honor;
         this.nobility = nobility;
     }
 
-    public void campare( Griffindor studentFirst,  Griffindor studentSecond) {
+    public void campare( Griffindor studentFirst) {
+        if (studentFirst == null) {
+            System.out.println("Вы не передали студента");
+            return;
+        }
+
         int powerStudentOne = studentFirst.getBravery() + studentFirst.getHonor()+studentFirst.getNobility();
-        int powerStudentSecond = studentSecond.getBravery() + studentSecond.getHonor()+studentSecond.getNobility();
+        int powerStudentSecond = this.getBravery() + this.getHonor()+this.getNobility();
         if (powerStudentOne > powerStudentSecond) {
             System.out.println(studentFirst.getName()+" "+ studentFirst.getSurname() + " лучший Гриффиндорец, чем " +
-                    studentSecond.getName()+" "+ studentSecond.getSurname());
+                    this.getName()+" "+ this.getSurname());
         } else if (powerStudentOne < powerStudentSecond){
-            System.out.println(studentSecond.getName()+" "+ studentSecond.getSurname() + " лучший Гриффиндорец, чем "
+            System.out.println(this.getName()+" "+ this.getSurname() + " лучший Гриффиндорец, чем "
                     + studentFirst.getName()+" "+ studentFirst.getSurname());
         }else {
             System.out.println(" Победила дружба! ");
@@ -41,7 +53,37 @@ public class Griffindor extends Hogwarts {
     }
 
 
+    public int getPowerOfMagic() {
+        return powerOfMagic;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPowerOfMagic(int powerOfMagic) {
+        this.powerOfMagic = powerOfMagic;
+    }
+
+    public int getDistanceTransgression() {
+        return distanceTransgression;
+    }
+
+    public void setDistanceTransgression(int distanceTransgression) {
+        this.distanceTransgression = distanceTransgression;
+    }
     public int getNobility() {
         return nobility;
     }
