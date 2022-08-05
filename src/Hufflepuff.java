@@ -8,12 +8,9 @@ public class Hufflepuff extends Hogwarts {
     private int hardworking;
     private int loyalty;
     private int honesty;
-    private int powerOfMagic;
-    private int distanceTransgression;
-    public Hufflepuff(String name, String surname, int powerOfMagic, int distanceTransgression,
-                      int hardworking,int loyalty,int honesty)
+
+    public Hufflepuff(String name, String surname,int hardworking,int loyalty,int honesty)
     {
-        super (powerOfMagic, distanceTransgression);
         this.name = name;
         this.Surname = surname;
         this.hardworking = hardworking;
@@ -40,7 +37,7 @@ public class Hufflepuff extends Hogwarts {
     }
     @Override
     public String toString() {
-        return "Я,"+getName()+" "+getSurname()+"- ученик Пуффендуя!" +
+        return "Я,"+getName()+" "+getSurname()+" - ученик Пуффендуя!" +
                 " У меня трудолюбие = " + hardworking +
                 ", верность = " + loyalty +
                 ", честность = " + honesty +

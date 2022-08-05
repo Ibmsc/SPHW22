@@ -9,12 +9,9 @@ public class Ravenclaw extends Hogwarts{
     private int wise;
     private int witty;
     private int creative;
-    private int powerOfMagic;
-    private int distanceTransgression;
-    public Ravenclaw(String name, String surname, int powerOfMagic, int distanceTransgression,
-                     int smart,int wise,int witty,int creative)
+
+    public Ravenclaw(String name, String surname,int smart,int wise,int witty,int creative)
     {
-        super(powerOfMagic, distanceTransgression);
         this.name = name;
         this.Surname = surname;
         this.smart = smart;
@@ -43,7 +40,7 @@ public class Ravenclaw extends Hogwarts{
     }
     @Override
     public String toString() {
-        return "Я,"+getName()+" "+getSurname()+"- ученик Когтеврана!" +
+        return "Я,"+getName()+" "+getSurname()+" - ученик Когтеврана!" +
                 " У меня ум = " +smart +
                 ", мудрость = " + wise +
                 ", остроумие = " + witty +

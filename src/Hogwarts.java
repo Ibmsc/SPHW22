@@ -3,23 +3,28 @@
 //
 public class Hogwarts {
 
+    private String name;
 
-    private int powerOfMagic;
-    private int distanceTransgression;
+    private String Surname;
+    int powerOfMagic;
+    int distanceTransgression;
 
-    public Hogwarts( int powerOfMagic, int distanceTransgression) {
-
+    public void Hogwarts(int powerOfMagic, int distanceTransgression) {
         this.powerOfMagic = powerOfMagic;
         this.distanceTransgression = distanceTransgression;
-    }
 
-    public void campare( Hogwarts studentFirst,  Hogwarts studentSecond) {
+    }
+    public void camparePower( Hogwarts studentFirst) {
+        if (studentFirst == null ) {
+        System.out.println("Вы не передали студента" );
+        return;
+    }
         int powerStudentOne = studentFirst.getPowerOfMagic() + studentFirst.getDistanceTransgression();
-        int powerStudentSecond = studentSecond.getPowerOfMagic() + studentSecond.getDistanceTransgression();
-        if (powerStudentOne > powerStudentSecond) {
-            System.out.println(" обладает большей мощностью магии, чем " );
-        } else if (powerStudentOne < powerStudentSecond){
-            System.out.println( " обладает большей мощностью магии, чем ");
+        int powerStudentSecond = this.getPowerOfMagic() + this.getDistanceTransgression();
+        if (powerStudentOne < powerStudentSecond) {
+            System.out.println(" Победил студент 1 ");
+        } else if (powerStudentOne > powerStudentSecond){
+            System.out.println( " Победил студент 2 ");
         }else {
             System.out.println(" Победила дружба! ");
         }
@@ -43,5 +48,19 @@ public class Hogwarts {
         this.distanceTransgression = distanceTransgression;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
 }

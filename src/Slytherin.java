@@ -10,12 +10,10 @@ public class Slytherin extends Hogwarts {
     private int ambitious;
     private int resourceful;
     private int thirstForPower;
-    private int powerOfMagic;
-    private int distanceTransgression;
-    public Slytherin(String name, String surname, int powerOfMagic, int distanceTransgression,
-                     int cunning,int determined,int ambitious,int resourceful,int thirstForPower)
+
+    public Slytherin(String name, String surname,int cunning,int determined,int ambitious,int resourceful,int thirstForPower)
     {
-        super(powerOfMagic, distanceTransgression);
+
         this.name = name;
         this.Surname = surname;
         this.cunning = cunning;
@@ -43,9 +41,10 @@ public class Slytherin extends Hogwarts {
             System.out.println(" Победила дружба! ");
         }
     }
+
     @Override
     public String toString() {
-        return "Я,"+getName()+" "+getSurname()+"- ученик Слизерина!" +
+        return "Я,"+getName()+" "+getSurname()+" - ученик Слизерина!" +
                 " У меня хитрость = " + cunning +
                 ", решительность = " + determined +
                 ", амбициозность = " + ambitious +
